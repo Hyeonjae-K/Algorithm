@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 // 반복적인 거듭제곱
 double iterationPower(double x, int n) {
@@ -25,11 +26,25 @@ double recursionPower(double x, int n) {
 }
 
 int main() {
-	double x = 1.12345;
-	int n = 100;
+	clock_t start;
+	float iterationTime, recursionTime;
+	double x = 2;
+	int n = 1000;
 
-	printf("%lf\n", iterationPower(x, n));
-	printf("%lf\n", recursionPower(x, n));
+	start = clock();
+	for (int i = 0; i < 100000; i++) {
+		iterationPower(x, n);
+	}
+	iterationTime = (float)(clock() - start) / CLOCKS_PER_SEC;
+	
+	start = clock();
+	for (int i = 0; i < 100000; i++) {
+		recursionPower(x, n);
+	}
+	recursionTime = (float)(clock() - start) / CLOCKS_PER_SEC;
+
+	printf("반복: %f\n", iterationTime);
+	printf("순환: %f", recursionTime);
 
 	return 0;
 }
