@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// 반복적인 팩토리얼
 long long int iterationFactorial(int n) {
 	long long int result = 1;
 
@@ -10,6 +11,7 @@ long long int iterationFactorial(int n) {
 	return result;
 }
 
+// 순환적인 팩토리얼
 long long int recursionFactorial(int n) {
 	if (n == 1) {
 		return 1;
@@ -20,8 +22,10 @@ long long int recursionFactorial(int n) {
 }
 
 int main() {
-	printf("%lld\n", iterationFactorial(20));
-	printf("%lld\n", recursionFactorial(20));
+	int n = 10;
+
+	printf("%lld\n", iterationFactorial(n));
+	printf("%lld\n", recursionFactorial(n));
 
 	return 0;
 }
