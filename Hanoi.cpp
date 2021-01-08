@@ -12,7 +12,10 @@ void hanoi(int n, char from, char tmp, char to) {
 }
 
 int main() {
-	hanoi(4, 'a', 'b', 'c');
+	for (int i = 1; i < 5; i++) {
+		hanoi(i, 'a', 'b', 'c');
+		printf("\n\n");
+	}
 
 	return 0;
 }
