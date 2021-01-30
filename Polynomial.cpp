@@ -29,8 +29,6 @@ polynomial add_poly1(polynomial A, polynomial B) {
 	return C;
 }
 
-
-
 int main() {
 	polynomial A1 = { 5, {3, 6, 0, 0, 0, 10} };
 	polynomial B1 = { 4, {7, 0, 5, 0, 1} };
